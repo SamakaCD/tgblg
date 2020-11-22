@@ -24,7 +24,18 @@ const babelLoaderConfiguration = {
       // The 'metro-react-native-babel-preset' preset is recommended to match React Native's packager
       presets: ['module:metro-react-native-babel-preset'],
       // Re-write paths to import only the modules needed by the app
-      plugins: ['react-native-web'],
+      plugins: [
+        'react-native-web',
+        [
+          'module-resolver',
+          {
+            root: ['./'],
+            alias: {
+              presentation: './src/presentation',
+            },
+          },
+        ],
+      ],
     },
   },
 };
