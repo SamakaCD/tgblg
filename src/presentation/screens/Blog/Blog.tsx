@@ -1,11 +1,9 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Button} from 'react-native-paper';
+import {Text} from 'react-native';
+import {ContentContainer} from 'presentation/components';
 
 export const Blog = () => (
-  <View>
-    <Button mode="contained" onPress={() => {}}>
-      Test
-    </Button>
-  </View>
+  <ContentContainer>
+    <Text>Some blog content</Text>
+  </ContentContainer>
 );
