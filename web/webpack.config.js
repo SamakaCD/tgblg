@@ -15,6 +15,7 @@ const babelLoaderConfiguration = {
     path.resolve(appDirectory, 'index.web.js'),
     path.resolve(appDirectory, 'src'),
     path.resolve(appDirectory, 'node_modules/react-native-uncompiled'),
+    path.resolve(appDirectory, 'node_modules/react-native-vector-icons'),
   ],
   use: {
     loader: 'babel-loader',
@@ -39,6 +40,12 @@ const imageLoaderConfiguration = {
   },
 };
 
+const vectorIconsLoaderConfiguration = {
+  test: /\.ttf$/,
+  loader: 'url-loader', // or directly file-loader
+  include: path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
+};
+
 module.exports = {
   entry: [
     // load any web API polyfills
@@ -56,7 +63,11 @@ module.exports = {
   // ...the rest of your config
 
   module: {
-    rules: [babelLoaderConfiguration, imageLoaderConfiguration],
+    rules: [
+      babelLoaderConfiguration,
+      imageLoaderConfiguration,
+      vectorIconsLoaderConfiguration,
+    ],
   },
 
   resolve: {
