@@ -14,8 +14,7 @@ const babelLoaderConfiguration = {
   include: [
     path.resolve(appDirectory, 'index.web.js'),
     path.resolve(appDirectory, 'src'),
-    path.resolve(appDirectory, 'node_modules/react-native-uncompiled'),
-    path.resolve(appDirectory, 'node_modules/react-native-vector-icons'),
+    path.resolve(appDirectory, 'node_modules'),
   ],
   use: {
     loader: 'babel-loader',
@@ -32,6 +31,8 @@ const babelLoaderConfiguration = {
             root: ['./'],
             alias: {
               presentation: './src/presentation',
+              telegram: './src/telegram',
+              utils: './src/utils',
             },
           },
         ],
