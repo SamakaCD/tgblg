@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "web": "webpack-cli serve --mode development --config ./web/webpack.config.js --watch",
-    "lint": "eslint ."
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
